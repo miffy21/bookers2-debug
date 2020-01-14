@@ -2,10 +2,10 @@ class BooksController < ApplicationController
   before_action :correct_book, only: [:edit, :update]
 
   def show
-    @books = Book.all
     @book = Book.new
     @userbook = Book.find(params[:id])
     @user = @userbook.user
+    @bookcomment = BookComment.new
   end
 
   def index
